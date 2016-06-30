@@ -1,6 +1,6 @@
 define({
   "name": "God API",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "God API- Robust API for wallpapers",
   "title": "God API Documentation",
   "url": "http://freakpirate.ddns.net:8080/v2",
@@ -19,7 +19,7 @@ define({
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-06-30T06:08:04.973Z",
+    "time": "2016-06-30T12:30:31.926Z",
     "url": "http://apidocjs.com",
     "version": "0.16.1"
   }
