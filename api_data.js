@@ -2768,7 +2768,7 @@ define({ "api": [
     "groupTitle": "Wallpaper"
   },
   {
-    "type": "put",
+    "type": "post",
     "url": "/favourite",
     "title": "Favourites",
     "version": "0.2.0",
@@ -4045,7 +4045,7 @@ define({ "api": [
     "groupTitle": "Wallpaper"
   },
   {
-    "type": "put",
+    "type": "post",
     "url": "/downloads",
     "title": "Downloads",
     "version": "0.2.0",
