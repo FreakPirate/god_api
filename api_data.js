@@ -2095,7 +2095,7 @@ define({ "api": [
   },
   {
     "type": "get",
-    "url": "/wallpaper/top_rated",
+    "url": "/wallpaper/toprated",
     "title": "Top Rated",
     "version": "0.3.0",
     "name": "GetTopRatedWallpaper",
@@ -2109,7 +2109,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X GET -i http://futuretraxex.ddns.net/v3/wallpaper/top_rated?limit=1&page=2&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X GET -i http://futuretraxex.ddns.net/v3/wallpaper/toprated?limit=1&page=2&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -2761,184 +2761,6 @@ define({ "api": [
     "groupTitle": "Wallpaper"
   },
   {
-    "type": "post",
-    "url": "/postFavourite",
-    "title": "PostFavourite",
-    "version": "0.3.0",
-    "name": "PostFavourites",
-    "group": "Wallpaper",
-    "permission": [
-      {
-        "name": "none\n        *"
-      }
-    ],
-    "description": "<p>Increment number of times a wallpaper was stored in device persistent storage specified by <code>id</code>. Output Output Format: JSON *</p>",
-    "examples": [
-      {
-        "title": "Example usage: ",
-        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postFavourite?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
-        "type": "json"
-      }
-    ],
-    "parameter": {
-      "fields": {
-        "Parameter": [
-          {
-            "group": "Parameter",
-            "type": "Number",
-            "optional": false,
-            "field": "id",
-            "description": "<p>Mandatory      Number of wallpapers to list in a page.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "api_key",
-            "description": "<p>Mandatory   api_key for authorized use of api database *</p>"
-          }
-        ]
-      }
-    },
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "type": "Object[]",
-            "optional": false,
-            "field": "result",
-            "description": "<p>List of all wallpapers present in the specified category.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "result.id",
-            "description": "<p>The wallpaper ID.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "result.image_title",
-            "description": "<p>Title of wallpaper.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "result.image_path",
-            "description": "<p>Relative path to actual image.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "result.image_hash",
-            "description": "<p>Hash value of image.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "result.image_thumb",
-            "description": "<p>Relative path to thumbnail file of image.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "result.image_size",
-            "description": "<p>Aspect ratio of image. E.g: 780x1280</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "result.category_id",
-            "description": "<p>Id of the category to which the image belongs to.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "result.total_votes",
-            "description": "<p>Total votes on image, sum of up and down votes.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "result.up_votes",
-            "description": "<p>Up votes on image.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "result.down_votes",
-            "description": "<p>Down votes on image.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "result.view_count",
-            "description": "<p>Number of times the image is viewed.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "result.favourite_count",
-            "description": "<p>Number of times the image is marked as <code>favourite</code>.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "Number",
-            "optional": false,
-            "field": "result.download_count",
-            "description": "<p>Number of times the image is downloaded. *</p>"
-          }
-        ]
-      }
-    },
-    "error": {
-      "fields": {
-        "Error 4xx": [
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "MissingParameterId",
-            "description": "<p>The parameter <code>id</code> (wallpaper_id) is missing.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "ImageNotFound",
-            "description": "<p>Image whose vote to be updated is not found.</p>"
-          },
-          {
-            "group": "Error 4xx",
-            "optional": false,
-            "field": "UpdateError",
-            "description": "<p>Error caused by fault of server or network. *</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "*     HTTP/1.1 400 Bad Request\n*     {\n*        \"error_type\": \"HTTP/1.1 400 Bad Request\",\n*        \"error\": \"MissingParameter 'id'\"\n*     }",
-          "type": "json"
-        }
-      ]
-    },
-    "filename": "api/web_api.py",
-    "groupTitle": "Wallpaper"
-  },
-  {
     "type": "put",
     "url": "/favourite",
     "title": "Favourites",
@@ -3111,8 +2933,8 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/postView",
-    "title": "PostView",
+    "url": "/postview",
+    "title": "Post View",
     "version": "0.3.0",
     "name": "PostView",
     "group": "Wallpaper",
@@ -3125,7 +2947,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postView?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postview?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -3460,8 +3282,8 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/postVote",
-    "title": "Vote",
+    "url": "/postvote",
+    "title": "Post Vote",
     "version": "0.3.0",
     "name": "PostVote",
     "group": "Wallpaper",
@@ -3474,7 +3296,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X POST -d \"id=1&vote=up\" -i http://futuretraxex.ddns.net/v3/vote?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X POST -d \"id=1&vote=up\" -i http://futuretraxex.ddns.net/v3/postvote?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -4016,8 +3838,8 @@ define({ "api": [
   },
   {
     "type": "get, post",
-    "url": "/postWallpaper",
-    "title": "PostWallpaper",
+    "url": "/postwallpaper",
+    "title": "Post Wallpaper",
     "version": "0.3.0",
     "name": "PostWallpaper",
     "group": "Wallpaper",
@@ -4026,11 +3848,11 @@ define({ "api": [
         "name": "none\n        *"
       }
     ],
-    "description": "<p><code>GET</code> method of /postWallpaper redirects to an HTML interface to submit a wallpaper to API database. HTML form does sumbmission automatically. *</p>",
+    "description": "<p><code>GET</code> method of /postwallpaper redirects to an HTML interface to submit a wallpaper to API database. HTML form does sumbmission automatically. *</p>",
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X GET -i http://futuretraxex.ddns.net/v3/postWallpaper",
+        "content": "curl -X GET -i http://futuretraxex.ddns.net/v3/postwallpaper",
         "type": "json"
       }
     ],
@@ -4039,8 +3861,8 @@ define({ "api": [
   },
   {
     "type": "post",
-    "url": "/postDownload",
-    "title": "PostDownloads",
+    "url": "/postdownload",
+    "title": "Post Downloads",
     "version": "0.3.0",
     "name": "UpdateDownloads",
     "group": "Wallpaper",
@@ -4053,7 +3875,185 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postDownload?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postdownload?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "type": "json"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Mandatory      Number of wallpapers to list in a page.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Mandatory   api_key for authorized use of api database *</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "result",
+            "description": "<p>List of all wallpapers present in the specified category.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.id",
+            "description": "<p>The wallpaper ID.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.image_title",
+            "description": "<p>Title of wallpaper.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.image_path",
+            "description": "<p>Relative path to actual image.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.image_hash",
+            "description": "<p>Hash value of image.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.image_thumb",
+            "description": "<p>Relative path to thumbnail file of image.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "result.image_size",
+            "description": "<p>Aspect ratio of image. E.g: 780x1280</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.category_id",
+            "description": "<p>Id of the category to which the image belongs to.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.total_votes",
+            "description": "<p>Total votes on image, sum of up and down votes.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.up_votes",
+            "description": "<p>Up votes on image.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.down_votes",
+            "description": "<p>Down votes on image.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.view_count",
+            "description": "<p>Number of times the image is viewed.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.favourite_count",
+            "description": "<p>Number of times the image is marked as <code>favourite</code>.</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "result.download_count",
+            "description": "<p>Number of times the image is downloaded. *</p>"
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "MissingParameterId",
+            "description": "<p>The parameter <code>id</code> (wallpaper_id) is missing.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ImageNotFound",
+            "description": "<p>Image whose vote to be updated is not found.</p>"
+          },
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UpdateError",
+            "description": "<p>Error caused by fault of server or network. *</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "*     HTTP/1.1 400 Bad Request\n*     {\n*        \"error_type\": \"HTTP/1.1 400 Bad Request\",\n*        \"error\": \"MissingParameter 'id'\"\n*     }",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "api/web_api.py",
+    "groupTitle": "Wallpaper"
+  },
+  {
+    "type": "post",
+    "url": "/postfavourite",
+    "title": "Post Favourite",
+    "version": "0.3.0",
+    "name": "postfavourites",
+    "group": "Wallpaper",
+    "permission": [
+      {
+        "name": "none\n        *"
+      }
+    ],
+    "description": "<p>Increment number of times a wallpaper was stored in device persistent storage specified by <code>id</code>. Output Output Format: JSON *</p>",
+    "examples": [
+      {
+        "title": "Example usage: ",
+        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postfavourite?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
