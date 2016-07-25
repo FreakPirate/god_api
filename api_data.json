@@ -2590,22 +2590,22 @@
     "groupTitle": "Wallpaper"
   },
   {
-    "type": "put",
-    "url": "/downloads",
-    "title": "Downloads",
-    "version": "0.2.0",
-    "name": "PostDownloads",
+    "type": "post",
+    "url": "/postfavourite",
+    "title": "Post Favourite",
+    "version": "0.3.0",
+    "name": "PostFavourites",
     "group": "Wallpaper",
     "permission": [
       {
-        "name": "none\n    *"
+        "name": "none\n        *"
       }
     ],
-    "description": "<p>Increment number of downloads of wallpaper specified by <code>id</code>. Output Output Format: JSON *</p>",
+    "description": "<p>Increment number of times a wallpaper was stored in device persistent storage specified by <code>id</code>. Output Output Format: JSON *</p>",
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X PUT -d \"id=1\" -i http://freakpirate.ddns.net:8080/v2/download",
+        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postfavourite?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -2617,7 +2617,14 @@
             "type": "Number",
             "optional": false,
             "field": "id",
-            "description": "<p>Mandatory      Number of wallpapers to list in a page. *</p>"
+            "description": "<p>Mandatory      Number of wallpapers to list in a page.</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "api_key",
+            "description": "<p>Mandatory   api_key for authorized use of api database *</p>"
           }
         ]
       }
@@ -2671,7 +2678,7 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "result.image_aspect_ratio",
+            "field": "result.image_size",
             "description": "<p>Aspect ratio of image. E.g: 780x1280</p>"
           },
           {
@@ -2757,7 +2764,7 @@
         }
       ]
     },
-    "filename": "api/_apidoc.py",
+    "filename": "api/web_api.py",
     "groupTitle": "Wallpaper"
   },
   {
@@ -4038,22 +4045,22 @@
     "groupTitle": "Wallpaper"
   },
   {
-    "type": "post",
-    "url": "/postfavourite",
-    "title": "Post Favourite",
-    "version": "0.3.0",
-    "name": "postfavourites",
+    "type": "put",
+    "url": "/downloads",
+    "title": "Downloads",
+    "version": "0.2.0",
+    "name": "UpdateDownloads",
     "group": "Wallpaper",
     "permission": [
       {
-        "name": "none\n        *"
+        "name": "none\n    *"
       }
     ],
-    "description": "<p>Increment number of times a wallpaper was stored in device persistent storage specified by <code>id</code>. Output Output Format: JSON *</p>",
+    "description": "<p>Increment number of downloads of wallpaper specified by <code>id</code>. Output Output Format: JSON *</p>",
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postfavourite?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X PUT -d \"id=1\" -i http://freakpirate.ddns.net:8080/v2/download",
         "type": "json"
       }
     ],
@@ -4065,14 +4072,7 @@
             "type": "Number",
             "optional": false,
             "field": "id",
-            "description": "<p>Mandatory      Number of wallpapers to list in a page.</p>"
-          },
-          {
-            "group": "Parameter",
-            "type": "String",
-            "optional": false,
-            "field": "api_key",
-            "description": "<p>Mandatory   api_key for authorized use of api database *</p>"
+            "description": "<p>Mandatory      Number of wallpapers to list in a page. *</p>"
           }
         ]
       }
@@ -4126,7 +4126,7 @@
             "group": "Success 200",
             "type": "String",
             "optional": false,
-            "field": "result.image_size",
+            "field": "result.image_aspect_ratio",
             "description": "<p>Aspect ratio of image. E.g: 780x1280</p>"
           },
           {
@@ -4212,7 +4212,7 @@
         }
       ]
     },
-    "filename": "api/web_api.py",
+    "filename": "api/_apidoc.py",
     "groupTitle": "Wallpaper"
   }
 ]
