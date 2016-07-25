@@ -1,33 +1,5 @@
 define({ "api": [
   {
-    "success": {
-      "fields": {
-        "Success 200": [
-          {
-            "group": "Success 200",
-            "optional": false,
-            "field": "varname1",
-            "description": "<p>No type.</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "String",
-            "optional": false,
-            "field": "varname2",
-            "description": "<p>With type.</p>"
-          }
-        ]
-      }
-    },
-    "type": "",
-    "url": "",
-    "version": "0.0.0",
-    "filename": "api/static/main.js",
-    "group": "C__Users_FreakPirate_god_api_api_static_main_js",
-    "groupTitle": "C__Users_FreakPirate_god_api_api_static_main_js",
-    "name": ""
-  },
-  {
     "type": "get",
     "url": "/categories",
     "title": "List",
@@ -43,7 +15,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -i http://freakpirate1.pythonanywhere.com/v3/categories?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -i http://futuretraxex.ddns.net/v3/categories?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -276,7 +248,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -i http://freakpirate1.pythonanywhere.com/v3/category/6?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -i http://futuretraxex.ddns.net/v3/category/6?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -767,6 +739,80 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/image/<name>",
+    "title": "Get Image",
+    "version": "0.3.0",
+    "name": "GetImage",
+    "group": "Image",
+    "permission": [
+      {
+        "name": "none\n    *"
+      }
+    ],
+    "description": "<p>This will throw an image to the browser screen as per the given name. Can also be used with *picasso to populate ImageView. *</p>",
+    "examples": [
+      {
+        "title": "Example usage: ",
+        "content": "http://futuretraxex.ddns.net/image/iewo1no8iw.jpg",
+        "type": "json"
+      }
+    ],
+    "filename": "api/web_api.py",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
+    "url": "/image/<name>",
+    "title": "Thumbnail",
+    "version": "0.3.0",
+    "name": "GetThumbnail",
+    "group": "Image",
+    "permission": [
+      {
+        "name": "none\n    *"
+      }
+    ],
+    "description": "<p>This will throw an image (thumbnail) to the browser screen as per the given name. Can also be used with *picasso to populate ImageView. *</p>",
+    "examples": [
+      {
+        "title": "Example usage: ",
+        "content": "http://futuretraxex.ddns.net/thumbnail/iewo1no8iw.jpg",
+        "type": "json"
+      }
+    ],
+    "filename": "api/web_api.py",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
+    "url": "/",
+    "title": "Root '/'",
+    "version": "0.3.0",
+    "name": "Root",
+    "group": "Image",
+    "permission": [
+      {
+        "name": "none\n    *"
+      }
+    ],
+    "description": "<p>Redirects the user to the documentation page of the API located at &quot;freakpirate.github.io/god_api&quot;. *</p>",
+    "examples": [
+      {
+        "title": "Example usage: ",
+        "content": "http://futuretraxex.ddns.net",
+        "type": "json"
+      },
+      {
+        "title": "Redirect:",
+        "content": "http://freakpirate.github.io/god_api",
+        "type": "json"
+      }
+    ],
+    "filename": "api/web_api.py",
+    "groupTitle": "Image"
+  },
+  {
+    "type": "get",
     "url": "/wallpaper/popular",
     "title": "Popular",
     "version": "0.3.0",
@@ -781,7 +827,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X GET -i http://freakpirate1.pythonanywhere.com/v3/wallpaper/popular?limit=1&page=1&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X GET -i http://futuretraxex.ddns.net/v3/wallpaper/popular?limit=1&page=1&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -1128,7 +1174,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -i http://freakpirate1.pythonanywhere.com/v3/wallpaper/random?limit=1&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -i http://futuretraxex.ddns.net/v3/wallpaper/random?limit=1&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -1579,7 +1625,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -i http://freakpirate1.pythonanywhere.com/v3/wallpaper?id=1&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -i http://futuretraxex.ddns.net/v3/wallpaper?id=1&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -2063,7 +2109,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X GET -i http://freakpirate1.pythonanywhere.com/v3/wallpaper/top_rated?limit=1&page=2&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X GET -i http://futuretraxex.ddns.net/v3/wallpaper/top_rated?limit=1&page=2&api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -2730,7 +2776,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X POST -d \"id=1\" -i http://freakpirate1.pythonanywhere.com/v3/postFavourite?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postFavourite?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -3079,7 +3125,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X POST -d \"id=1\" -i http://freakpirate1.pythonanywhere.com/v3/postView?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postView?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -3428,7 +3474,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X POST -d \"id=1&vote=up\" -i http://freakpirate1.pythonanywhere.com/v3/vote?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X POST -d \"id=1&vote=up\" -i http://futuretraxex.ddns.net/v3/vote?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
@@ -3984,7 +4030,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X GET -i http://freakpirate1.pythonanywhere.com/v3/postWallpaper",
+        "content": "curl -X GET -i http://futuretraxex.ddns.net/v3/postWallpaper",
         "type": "json"
       }
     ],
@@ -4007,7 +4053,7 @@ define({ "api": [
     "examples": [
       {
         "title": "Example usage: ",
-        "content": "curl -X POST -d \"id=1\" -i http://freakpirate1.pythonanywhere.com/v3/postDownload?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
+        "content": "curl -X POST -d \"id=1\" -i http://futuretraxex.ddns.net/v3/postDownload?api_key=hhqw5t7d8tcdy2cmbnjme78um83a6pa9",
         "type": "json"
       }
     ],
